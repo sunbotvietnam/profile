@@ -12,214 +12,219 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--orange:#f36a21;--orange2:#ff9a56;--orange3:#ffede2;--ink:#0b0f19;--slate:#171d2b;--muted:#667085;--line:rgba(15,23,42,.09);--paper:#f8fafc}
+    :root{--orange:#f36a21;--orange2:#ff9a56;--ink:#0b0f19;--slate:#171d2b;--muted:#667085;--line:#e8edf3;--paper:#f7f9fc}
     *{box-sizing:border-box}
-    html{scroll-padding-top:86px}
-    body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;color:#172033;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-    h1,h2{font-family:'Roboto Condensed',Inter,sans-serif;text-transform:uppercase;letter-spacing:-.025em;font-weight:800}
-    h3,h4{font-family:'Space Grotesk',Inter,sans-serif;letter-spacing:-.03em}
-    a{transition:.25s cubic-bezier(.2,.8,.2,1)}
+    html{scroll-padding-top:82px}
+    body{margin:0;font-family:Inter,sans-serif;background:var(--paper);color:#172033;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+    h1,h2{margin:0;font-family:'Roboto Condensed',Inter,sans-serif;text-transform:uppercase;font-weight:800;letter-spacing:.005em}
+    h3,h4{margin:0;font-family:'Space Grotesk',Inter,sans-serif;letter-spacing:-.02em}
+    p{margin-top:0}
+    a{transition:.24s cubic-bezier(.2,.8,.2,1)}
     ::selection{background:#ffd8c2;color:#8a3000}
-    .nav-glass{background:rgba(248,250,252,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(15,23,42,.06)}
-    .section{padding:108px 0}
-    .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
-    .kicker{font-size:11px;line-height:1;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
-    .display{font-family:'Roboto Condensed',Inter,sans-serif;font-size:clamp(50px,7.2vw,94px);line-height:.92;font-weight:900;letter-spacing:-.03em;text-transform:uppercase}
-    .title{font-family:'Roboto Condensed',Inter,sans-serif;font-size:clamp(38px,4.5vw,64px);line-height:.96;font-weight:800;letter-spacing:-.022em;text-transform:uppercase}
-    .subtitle{font-size:clamp(18px,2vw,22px);line-height:1.7;color:#5b6577}
-    .gradient-text{background:linear-gradient(180deg,#ffb47c 0%,#f36a21 58%,#ca4800 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 8px rgba(243,106,33,.12))}
-    .glass-card{background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.9);box-shadow:0 24px 70px -42px rgba(15,23,42,.35),inset 0 1px 0 rgba(255,255,255,.95);backdrop-filter:blur(16px);border-radius:28px}
-    .tech-card{background:#fff;border:1px solid #e8edf3;border-radius:24px;box-shadow:0 18px 50px -36px rgba(15,23,42,.32);transition:.35s cubic-bezier(.2,.8,.2,1)}
-    .tech-card:hover{transform:translateY(-6px);border-color:#ffd0b5;box-shadow:0 28px 64px -34px rgba(243,106,33,.25)}
-    .dark-panel{background:radial-gradient(circle at 15% 10%,rgba(243,106,33,.16),transparent 28%),radial-gradient(circle at 90% 15%,rgba(255,154,86,.09),transparent 24%),#0b0f19;color:#fff}
-    .mesh{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:32px 32px}
-    .micro-dot{background-image:radial-gradient(rgba(243,106,33,.17) 1px,transparent 1px);background-size:22px 22px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 21px;font-size:13px;font-weight:900;letter-spacing:.01em}
-    .btn-primary{background:linear-gradient(135deg,#ff8a42,#ef5a12);color:#fff;box-shadow:0 12px 28px -10px rgba(239,90,18,.62),inset 0 1px 0 rgba(255,255,255,.35)}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -10px rgba(239,90,18,.7)}
-    .btn-dark{background:#111827;color:#fff;border:1px solid #273144}
-    .btn-dark:hover{border-color:#f36a21;color:#ffd4bd}
+    .nav-glass{background:rgba(248,250,252,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(15,23,42,.06)}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+    .section{padding:92px 0}
+    .section-tight{padding:64px 0}
+    .kicker{font-size:10px;line-height:1;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:var(--orange)}
+    .display{font-size:clamp(52px,6.8vw,86px);line-height:.93;letter-spacing:.01em}
+    .title{font-size:clamp(36px,4.2vw,56px);line-height:.98;letter-spacing:.01em}
+    .subtitle{font-size:clamp(17px,1.7vw,20px);line-height:1.65;color:#5d6676;max-width:62ch}
+    .bodycopy{font-size:15px;line-height:1.75;color:#667085;max-width:62ch}
+    .accent{color:var(--orange)}
+    .gradient-text{background:linear-gradient(180deg,#ffb27b 0%,#f36a21 60%,#c94804 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .glass-card{background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.95);box-shadow:0 24px 70px -48px rgba(15,23,42,.38);backdrop-filter:blur(16px);border-radius:24px}
+    .tech-card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 18px 48px -38px rgba(15,23,42,.3);transition:.3s cubic-bezier(.2,.8,.2,1)}
+    .tech-card:hover{transform:translateY(-4px);border-color:#ffd0b5;box-shadow:0 26px 58px -34px rgba(243,106,33,.2)}
+    .dark-panel{background:radial-gradient(circle at 15% 10%,rgba(243,106,33,.13),transparent 30%),radial-gradient(circle at 88% 12%,rgba(255,154,86,.07),transparent 25%),#0b0f19;color:#fff}
+    .mesh{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:36px 36px}
+    .micro-dot{background-image:radial-gradient(rgba(243,106,33,.14) 1px,transparent 1px);background-size:24px 24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 20px;font-size:12px;font-weight:800}
+    .btn-primary{background:linear-gradient(135deg,#ff8a42,#ef5a12);color:#fff;box-shadow:0 12px 28px -12px rgba(239,90,18,.58),inset 0 1px 0 rgba(255,255,255,.3)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-dark{background:#111827;color:#fff;border:1px solid #273144}.btn-dark:hover{border-color:#f36a21;color:#ffd4bd}
     .btn-light{background:#fff;color:#334155;border:1px solid #dce3eb}.btn-light:hover{border-color:#ffb78e;color:#d84c00}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
     .live{background:#ecfdf3;color:#047857;border:1px solid #a7f3d0}.pilot{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa}.road{background:#f1f5f9;color:#475569;border:1px solid #cbd5e1}
-    .media{position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#020617}
+    .media{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#020617}
     .media img,.media iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
-    .media-frame{padding:8px;border-radius:30px;background:linear-gradient(145deg,#fff,#eef2f7);border:1px solid #e6ebf0;box-shadow:0 34px 90px -48px rgba(15,23,42,.55)}
-    .hero-orb{position:absolute;border-radius:999px;filter:blur(100px);pointer-events:none}
-    .hero-card{background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(255,255,255,.7));border:1px solid rgba(255,255,255,.95);backdrop-filter:blur(18px);box-shadow:0 30px 80px -42px rgba(15,23,42,.45)}
-    .mini-stat{background:#0d1320;border:1px solid #252f43;border-radius:20px;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
-    .mini-stat strong{font-family:'Roboto Condensed',sans-serif;font-size:29px;font-weight:800;letter-spacing:-.02em}
-    .dash{background:#0d1320;border:1px solid #252f43;border-radius:28px;box-shadow:0 28px 80px -40px rgba(0,0,0,.7)}
-    .dash-row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;border-bottom:1px solid #253044}.dash-row:last-child{border:0}
-    .bar{height:7px;border-radius:999px;background:#202a3a;overflow:hidden}.bar>span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#ff9a56,#f36a21);box-shadow:0 0 18px rgba(243,106,33,.35)}
-    .flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.flow>div{position:relative}.flow>div:not(:last-child)::after{content:'›';position:absolute;right:-9px;top:50%;transform:translateY(-50%);z-index:2;color:#f36a21;font-size:25px;font-weight:900}
-    .flow-box{height:100%;padding:18px 15px;border-radius:20px;background:#fff;border:1px solid #e8edf3;box-shadow:0 14px 32px -28px rgba(15,23,42,.4)}
-    .video-card{transition:.35s cubic-bezier(.2,.8,.2,1)}.video-card:hover{transform:translateY(-7px)}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none}
+    .media-frame{padding:7px;border-radius:26px;background:linear-gradient(145deg,#fff,#eef2f7);border:1px solid #e6ebf0;box-shadow:0 30px 76px -46px rgba(15,23,42,.5)}
+    .hero-orb{position:absolute;border-radius:999px;filter:blur(110px);pointer-events:none}
+    .hero-card{background:linear-gradient(160deg,rgba(255,255,255,.94),rgba(255,255,255,.74));border:1px solid rgba(255,255,255,.98);backdrop-filter:blur(18px);box-shadow:0 28px 72px -44px rgba(15,23,42,.42)}
+    .mini-stat{background:#0d1320;border:1px solid #252f43;border-radius:18px;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+    .mini-stat strong{font-family:'Roboto Condensed',sans-serif;font-size:28px;font-weight:800;letter-spacing:.02em}
+    .dash{background:#0d1320;border:1px solid #252f43;border-radius:24px;box-shadow:0 26px 72px -42px rgba(0,0,0,.7)}
+    .dash-row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:13px 0;border-bottom:1px solid #253044}.dash-row:last-child{border:0}
+    .bar{height:6px;border-radius:999px;background:#202a3a;overflow:hidden}.bar>span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#ff9a56,#f36a21)}
+    .flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.flow>div{position:relative}.flow>div:not(:last-child)::after{content:'›';position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:2;color:#f36a21;font-size:22px;font-weight:900}
+    .flow-box{height:100%;padding:17px 14px;border-radius:18px;background:#fff;border:1px solid #e8edf3;box-shadow:0 12px 28px -26px rgba(15,23,42,.36)}
+    .video-card{transition:.3s cubic-bezier(.2,.8,.2,1)}.video-card:hover{transform:translateY(-5px)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none}
     .navlink{position:relative}.navlink::after{content:'';position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--orange);transition:.25s}.navlink:hover::after{right:0}
     .mobile-menu{display:none}.mobile-menu.open{display:block}
+    .section-head{margin-bottom:34px}.section-head .kicker{margin-bottom:14px}.section-head .title{margin-bottom:18px}
+    .eyeline{height:1px;background:linear-gradient(90deg,#f36a21,rgba(243,106,33,0));margin:22px 0 0}
     @media(max-width:1024px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.flow>div:not(:last-child)::after{display:none}}
-    @media(max-width:768px){.section{padding:78px 0}.display{font-size:50px}.title{font-size:39px}.wrap{padding:0 18px}.mobile-menu{position:absolute;top:78px;left:14px;right:14px;padding:14px;border-radius:20px;background:#fff;border:1px solid #e8edf3;box-shadow:0 25px 60px -30px rgba(15,23,42,.5)}.flow{grid-template-columns:1fr}}
+    @media(max-width:768px){.section{padding:72px 0}.section-tight{padding:52px 0}.display{font-size:50px}.title{font-size:39px}.wrap{padding:0 18px}.mobile-menu{position:absolute;top:76px;left:14px;right:14px;padding:14px;border-radius:18px;background:#fff;border:1px solid #e8edf3;box-shadow:0 25px 60px -30px rgba(15,23,42,.5)}.flow{grid-template-columns:1fr}.subtitle{font-size:17px}.hero-meta{display:grid!important;gap:8px!important}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
 
 <nav class="fixed top-0 inset-x-0 z-50 nav-glass" aria-label="Điều hướng chính">
-  <div class="wrap h-[78px] flex items-center justify-between relative">
-    <a href="#top" aria-label="Sunbot - về đầu trang"><img src="./logo-sunbot.png" alt="Sunbot" class="h-10 object-contain drop-shadow-sm"></a>
-    <div class="hidden lg:flex items-center gap-7 text-[12px] font-bold text-slate-600">
+  <div class="wrap h-[76px] flex items-center justify-between relative">
+    <a href="#top" aria-label="Sunbot - về đầu trang"><img src="./logo-sunbot.png" alt="Sunbot" class="h-9 object-contain drop-shadow-sm"></a>
+    <div class="hidden lg:flex items-center gap-7 text-[12px] font-semibold text-slate-600">
       <a class="navlink" href="#hoc">Sự học</a><a class="navlink" href="#giaovien">Người dạy</a><a class="navlink" href="#quantri">Quản trị</a><a class="navlink" href="#hethong">Hệ thống</a><a class="navlink" href="#minhchung">Minh chứng</a><a class="navlink" href="#quocte">Ghi nhận quốc tế</a>
     </div>
-    <div class="flex items-center gap-2"><a href="mailto:sunbotvietnam@gmail.com" class="hidden sm:inline-flex btn btn-primary">Trao đổi triển khai</a><button id="menuBtn" class="lg:hidden w-11 h-11 rounded-full bg-white border border-slate-300 font-bold" aria-label="Mở menu">☰</button></div>
+    <div class="flex items-center gap-2"><a href="mailto:sunbotvietnam@gmail.com" class="hidden sm:inline-flex btn btn-primary">Trao đổi triển khai</a><button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full bg-white border border-slate-300 font-bold" aria-label="Mở menu">☰</button></div>
     <div id="mobileMenu" class="mobile-menu lg:hidden text-sm font-semibold text-slate-700"><div class="grid gap-1"><a class="p-3 rounded-xl hover:bg-orange-50" href="#hoc">Sự học</a><a class="p-3 rounded-xl hover:bg-orange-50" href="#giaovien">Người dạy</a><a class="p-3 rounded-xl hover:bg-orange-50" href="#quantri">Quản trị</a><a class="p-3 rounded-xl hover:bg-orange-50" href="#hethong">Hệ thống</a><a class="p-3 rounded-xl hover:bg-orange-50" href="#minhchung">Minh chứng</a><a class="p-3 rounded-xl hover:bg-orange-50" href="#quocte">Ghi nhận quốc tế</a></div></div>
   </div>
 </nav>
 
-<header id="top" class="relative min-h-screen flex items-center overflow-hidden bg-[#f7f9fc] pt-[78px]">
-  <div class="hero-orb w-[520px] h-[520px] bg-orange-200/55 -top-40 -left-48"></div>
-  <div class="hero-orb w-[560px] h-[560px] bg-orange-100/50 -bottom-48 -right-40"></div>
-  <div class="absolute inset-0 micro-dot opacity-60"></div>
-  <div class="wrap w-full py-16 lg:py-20 grid lg:grid-cols-[1.02fr_.98fr] gap-14 items-center relative z-10">
+<header id="top" class="relative min-h-screen flex items-center overflow-hidden bg-[#f7f9fc] pt-[76px]">
+  <div class="hero-orb w-[500px] h-[500px] bg-orange-200/48 -top-40 -left-48"></div>
+  <div class="hero-orb w-[540px] h-[540px] bg-orange-100/42 -bottom-48 -right-40"></div>
+  <div class="absolute inset-0 micro-dot opacity-50"></div>
+  <div class="wrap w-full py-14 lg:py-16 grid lg:grid-cols-[1fr_1fr] gap-12 items-center relative z-10">
     <div class="reveal">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-orange-200 shadow-sm text-[10px] font-black uppercase tracking-[.16em] text-orange-600 mb-6"><span class="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_0_5px_rgba(243,106,33,.12)]"></span>Hệ thống giáo dục công nghệ cho mầm non</div>
-      <h1 class="display text-[#0b0f19] mb-8">Một tiết học tốt<br><span class="gradient-text">chưa đủ.</span></h1>
-      <p class="subtitle max-w-[650px] mb-5">Điều quan trọng hơn là nhà trường có nhìn thấy trẻ đang học thế nào, người dạy cần được hỗ trợ ở đâu và chất lượng đang thay đổi ra sao hay không.</p>
-      <p class="text-[16px] leading-7 text-slate-700 max-w-[610px] mb-9">Sunbot kết nối chương trình, học cụ, người dạy, dữ liệu và bảo đảm chất lượng thành một hệ thống có thể quan sát, hỗ trợ và cải tiến theo thời gian.</p>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-orange-200 shadow-sm text-[10px] font-extrabold uppercase tracking-[.16em] text-orange-600 mb-5"><span class="w-2 h-2 rounded-full bg-orange-500"></span>Hệ thống giáo dục công nghệ cho mầm non</div>
+      <h1 class="display text-[#0b0f19] mb-6">MỘT TIẾT HỌC TỐT<br><span class="gradient-text">CHƯA ĐỦ</span></h1>
+      <p class="subtitle mb-4">Điều quan trọng hơn là nhà trường có nhìn thấy trẻ đang học thế nào, người dạy cần được hỗ trợ ở đâu và chất lượng đang thay đổi ra sao hay không</p>
+      <p class="bodycopy mb-8">Sunbot kết nối chương trình, học cụ, người dạy, dữ liệu và bảo đảm chất lượng thành một hệ thống có thể quan sát, hỗ trợ và cải tiến theo thời gian</p>
       <div class="flex flex-wrap gap-3"><a href="#hoc" class="btn btn-primary">Khám phá hệ thống <span>↓</span></a><a href="#minhchung" class="btn btn-light">Xem minh chứng thực tế</a></div>
-      <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-[12px] font-bold uppercase tracking-[.08em] text-slate-500"><span><b class="text-slate-900">Made in Vietnam</b> · thiết kế cho mầm non</span><span><b class="text-slate-900">2025 & 2026</b> · HolonIQ SEA EdTech 50</span></div>
+      <div class="hero-meta mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-bold uppercase tracking-[.08em] text-slate-500"><span><b class="text-slate-900">Made in Vietnam</b> · thiết kế cho mầm non</span><span><b class="text-slate-900">2025–2026</b> · HolonIQ SEA EdTech 50</span></div>
     </div>
     <div class="reveal relative">
-      <div class="hero-card p-3 rounded-[34px] rotate-[1.4deg] hover:rotate-0 transition duration-500">
-        <div class="media rounded-[26px]"><img src="./hero-overlay-lop-hoc.jpg" alt="Lớp học Sunbot"></div>
+      <div class="hero-card p-3 rounded-[30px] rotate-[1deg] hover:rotate-0 transition duration-500">
+        <div class="media rounded-[23px]"><img src="./hero-overlay-lop-hoc.jpg" alt="Lớp học Sunbot"></div>
       </div>
-      <div class="absolute -bottom-7 -left-5 sm:-left-8 mini-stat px-5 py-4 flex items-center gap-4"><div class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center font-black">2×</div><div><strong>2025–2026</strong><div class="text-[10px] uppercase tracking-[.13em] text-slate-400">HolonIQ · SEA EdTech 50</div></div></div>
-      <div class="grid grid-cols-3 gap-3 mt-11">
-        <div class="glass-card p-4"><div class="kicker mb-2">Trẻ</div><p class="text-[13px] font-semibold leading-5">Học qua thao tác, thử nghiệm và giải quyết vấn đề.</p></div>
-        <div class="glass-card p-4"><div class="kicker mb-2">Người dạy</div><p class="text-[13px] font-semibold leading-5">Được đào tạo, quan sát và hỗ trợ chuyên môn.</p></div>
-        <div class="glass-card p-4"><div class="kicker mb-2">Nhà trường</div><p class="text-[13px] font-semibold leading-5">Nhìn thấy tiến độ, chất lượng và điểm cần cải tiến.</p></div>
+      <div class="absolute -bottom-6 -left-5 sm:-left-7 mini-stat px-5 py-4 flex items-center gap-4"><div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center font-black">2×</div><div><strong>2025–2026</strong><div class="text-[9px] uppercase tracking-[.13em] text-slate-400">HolonIQ · SEA EdTech 50</div></div></div>
+      <div class="grid grid-cols-3 gap-3 mt-9">
+        <div class="glass-card p-4"><div class="kicker mb-2">Trẻ</div><p class="text-[12px] font-semibold leading-5 mb-0">Học qua thao tác, thử nghiệm và giải quyết vấn đề</p></div>
+        <div class="glass-card p-4"><div class="kicker mb-2">Người dạy</div><p class="text-[12px] font-semibold leading-5 mb-0">Được đào tạo, quan sát và hỗ trợ chuyên môn</p></div>
+        <div class="glass-card p-4"><div class="kicker mb-2">Nhà trường</div><p class="text-[12px] font-semibold leading-5 mb-0">Nhìn thấy tiến độ, chất lượng và điểm cần cải tiến</p></div>
       </div>
     </div>
   </div>
 </header>
 
-<section class="py-8 bg-[#0b0f19] text-white border-y border-slate-800">
+<section class="py-7 bg-[#0b0f19] text-white border-y border-slate-800">
   <div class="wrap grid md:grid-cols-3 gap-7">
-    <div class="flex gap-4 items-start"><div class="text-orange-400 text-xl">01</div><div><h3 class="font-bold text-lg mb-1">Nhìn thấy sự học</h3><p class="text-sm text-slate-400 leading-6">Quan sát cách trẻ suy nghĩ, thử nghiệm, hợp tác và diễn đạt.</p></div></div>
-    <div class="flex gap-4 items-start"><div class="text-orange-400 text-xl">02</div><div><h3 class="font-bold text-lg mb-1">Phát triển người dạy</h3><p class="text-sm text-slate-400 leading-6">Đào tạo, sát hạch, quan sát lớp và đồng hành chuyên môn.</p></div></div>
-    <div class="flex gap-4 items-start"><div class="text-orange-400 text-xl">03</div><div><h3 class="font-bold text-lg mb-1">Quản trị chất lượng</h3><p class="text-sm text-slate-400 leading-6">Dữ liệu để cải tiến, không phải để tăng thêm hồ sơ.</p></div></div>
+    <div class="flex gap-4 items-start"><div class="text-orange-400 text-lg font-bold">01</div><div><h3 class="font-semibold text-[17px] mb-1">Nhìn thấy sự học</h3><p class="text-[13px] text-slate-400 leading-6 mb-0">Quan sát cách trẻ suy nghĩ, thử nghiệm, hợp tác và diễn đạt</p></div></div>
+    <div class="flex gap-4 items-start"><div class="text-orange-400 text-lg font-bold">02</div><div><h3 class="font-semibold text-[17px] mb-1">Phát triển người dạy</h3><p class="text-[13px] text-slate-400 leading-6 mb-0">Đào tạo, sát hạch, quan sát lớp và đồng hành chuyên môn</p></div></div>
+    <div class="flex gap-4 items-start"><div class="text-orange-400 text-lg font-bold">03</div><div><h3 class="font-semibold text-[17px] mb-1">Quản trị chất lượng</h3><p class="text-[13px] text-slate-400 leading-6 mb-0">Dữ liệu để cải tiến, không phải để tăng thêm hồ sơ</p></div></div>
   </div>
 </section>
 
 <section id="hoc" class="section bg-white">
-  <div class="wrap grid lg:grid-cols-[.9fr_1.1fr] gap-14 items-center">
-    <div class="reveal"><div class="kicker mb-4">01 · Nhìn thấy sự học</div><h2 class="title text-slate-950 mb-6">Không chỉ hỏi trẻ <span class="gradient-text">làm đúng hay chưa.</span></h2><p class="subtitle mb-7">Điều đáng quan sát hơn là trẻ tiếp cận vấn đề thế nào: có thử lại khi gặp khó, có trao đổi với bạn, có giải thích điều mình đang làm và có dần hình thành cách suy nghĩ có trình tự hay không.</p><p class="text-[15px] leading-7 text-slate-600">Sunbot không biến trẻ mầm non thành một bảng KPI. Dữ liệu quan sát được dùng để nhận diện xu hướng phát triển và cải thiện trải nghiệm học.</p></div>
+  <div class="wrap grid lg:grid-cols-[.88fr_1.12fr] gap-12 items-center">
+    <div class="reveal"><div class="section-head"><div class="kicker">01 · Nhìn thấy sự học</div><h2 class="title text-slate-950">KHÔNG CHỈ HỎI TRẺ<br><span class="gradient-text">LÀM ĐÚNG HAY CHƯA</span></h2><p class="subtitle">Điều đáng quan sát hơn là trẻ tiếp cận vấn đề thế nào: có thử lại khi gặp khó, có trao đổi với bạn, có giải thích điều mình đang làm và có dần hình thành cách suy nghĩ có trình tự hay không</p><div class="eyeline"></div></div><p class="bodycopy">Sunbot không biến trẻ mầm non thành một bảng KPI. Dữ liệu quan sát được dùng để nhận diện xu hướng phát triển và cải thiện trải nghiệm học</p></div>
     <div class="reveal grid sm:grid-cols-2 gap-4">
-      <div class="tech-card p-6"><div class="text-3xl mb-5">↻</div><h3 class="font-bold text-xl mb-2">Thử lại</h3><p class="text-sm leading-6 text-slate-600">Trẻ điều chỉnh cách làm khi kết quả chưa như mong muốn.</p></div>
-      <div class="tech-card p-6 sm:mt-8"><div class="text-3xl mb-5">◎</div><h3 class="font-bold text-xl mb-2">Suy nghĩ có trình tự</h3><p class="text-sm leading-6 text-slate-600">Trẻ hình thành khả năng dự đoán, sắp xếp và kiểm tra từng bước.</p></div>
-      <div class="tech-card p-6"><div class="text-3xl mb-5">◇</div><h3 class="font-bold text-xl mb-2">Hợp tác</h3><p class="text-sm leading-6 text-slate-600">Trẻ trao đổi, chia vai và cùng hoàn thành một nhiệm vụ.</p></div>
-      <div class="tech-card p-6 sm:mt-8"><div class="text-3xl mb-5">↗</div><h3 class="font-bold text-xl mb-2">Diễn đạt</h3><p class="text-sm leading-6 text-slate-600">Trẻ mô tả ý tưởng, cách làm và kết quả bằng ngôn ngữ của mình.</p></div>
+      <div class="tech-card p-6"><div class="text-2xl mb-4 text-orange-500">↻</div><h3 class="font-semibold text-lg mb-2">Thử lại</h3><p class="text-sm leading-6 text-slate-600 mb-0">Trẻ điều chỉnh cách làm khi kết quả chưa như mong muốn</p></div>
+      <div class="tech-card p-6 sm:mt-7"><div class="text-2xl mb-4 text-orange-500">◎</div><h3 class="font-semibold text-lg mb-2">Suy nghĩ có trình tự</h3><p class="text-sm leading-6 text-slate-600 mb-0">Trẻ hình thành khả năng dự đoán, sắp xếp và kiểm tra từng bước</p></div>
+      <div class="tech-card p-6"><div class="text-2xl mb-4 text-orange-500">◇</div><h3 class="font-semibold text-lg mb-2">Hợp tác</h3><p class="text-sm leading-6 text-slate-600 mb-0">Trẻ trao đổi, chia vai và cùng hoàn thành một nhiệm vụ</p></div>
+      <div class="tech-card p-6 sm:mt-7"><div class="text-2xl mb-4 text-orange-500">↗</div><h3 class="font-semibold text-lg mb-2">Diễn đạt</h3><p class="text-sm leading-6 text-slate-600 mb-0">Trẻ mô tả ý tưởng, cách làm và kết quả bằng ngôn ngữ của mình</p></div>
     </div>
   </div>
 </section>
 
 <section id="giaovien" class="section bg-[#f5f7fa]">
   <div class="wrap">
-    <div class="max-w-3xl reveal mb-12"><div class="kicker mb-4">02 · Phát triển người dạy</div><h2 class="title text-slate-950 mb-6">Một chương trình chỉ tốt bằng <span class="gradient-text">người biến nó thành trải nghiệm.</span></h2><p class="subtitle">Vì vậy Sunbot không dừng ở việc giao giáo án. Người dạy được chuẩn bị trước khi đứng lớp, được quan sát trong quá trình triển khai và được hỗ trợ khi cần.</p></div>
+    <div class="max-w-3xl reveal section-head"><div class="kicker">02 · Phát triển người dạy</div><h2 class="title text-slate-950">CHƯƠNG TRÌNH CHỈ TỐT KHI<br><span class="gradient-text">NGƯỜI DẠY LÀM NÓ SỐNG</span></h2><p class="subtitle">Vì vậy Sunbot không dừng ở việc giao giáo án. Người dạy được chuẩn bị trước khi đứng lớp, được quan sát trong quá trình triển khai và được hỗ trợ khi cần</p></div>
     <div class="flow reveal">
-      <div><div class="flow-box"><div class="kicker mb-3">01</div><h3 class="font-bold mb-2">Đào tạo</h3><p class="text-xs leading-5 text-slate-500">Hiểu chương trình, học cụ và mục tiêu giáo học.</p></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">02</div><h3 class="font-bold mb-2">Thực hành</h3><p class="text-xs leading-5 text-slate-500">Tập tổ chức hoạt động trước khi vào lớp.</p></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">03</div><h3 class="font-bold mb-2">Sát hạch</h3><p class="text-xs leading-5 text-slate-500">Kiểm tra năng lực triển khai chương trình.</p></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">04</div><h3 class="font-bold mb-2">Dạy thật</h3><p class="text-xs leading-5 text-slate-500">Thực hiện trong bối cảnh lớp học thực tế.</p></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">05</div><h3 class="font-bold mb-2">Quan sát</h3><p class="text-xs leading-5 text-slate-500">Nhận diện điểm mạnh và điểm cần hỗ trợ.</p></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">06</div><h3 class="font-bold mb-2">Đồng hành</h3><p class="text-xs leading-5 text-slate-500">Mentoring, phản hồi và tái chuẩn hóa khi cần.</p></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">01</div><h3 class="font-semibold mb-2">Đào tạo</h3><p class="text-xs leading-5 text-slate-500 mb-0">Hiểu chương trình, học cụ và mục tiêu giáo học</p></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">02</div><h3 class="font-semibold mb-2">Thực hành</h3><p class="text-xs leading-5 text-slate-500 mb-0">Tập tổ chức hoạt động trước khi vào lớp</p></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">03</div><h3 class="font-semibold mb-2">Sát hạch</h3><p class="text-xs leading-5 text-slate-500 mb-0">Kiểm tra năng lực triển khai chương trình</p></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">04</div><h3 class="font-semibold mb-2">Dạy thật</h3><p class="text-xs leading-5 text-slate-500 mb-0">Thực hiện trong bối cảnh lớp học thực tế</p></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">05</div><h3 class="font-semibold mb-2">Quan sát</h3><p class="text-xs leading-5 text-slate-500 mb-0">Nhận diện điểm mạnh và điểm cần hỗ trợ</p></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">06</div><h3 class="font-semibold mb-2">Đồng hành</h3><p class="text-xs leading-5 text-slate-500 mb-0">Mentoring, phản hồi và tái chuẩn hóa khi cần</p></div></div>
     </div>
   </div>
 </section>
 
 <section id="quantri" class="section dark-panel mesh">
-  <div class="wrap grid lg:grid-cols-[.9fr_1.1fr] gap-14 items-center">
-    <div class="reveal"><div class="kicker mb-4">03 · Quản trị chất lượng</div><h2 class="title text-white mb-6">Nhà trường không cần thêm <span class="gradient-text">một bảng số liệu để báo cáo.</span></h2><p class="text-lg leading-8 text-slate-300 mb-7">Điều hữu ích hơn là biết lớp nào đang đi đúng tiến độ, giáo viên nào cần hỗ trợ, nội dung nào trẻ gặp khó và điểm nào trong quá trình triển khai cần điều chỉnh.</p><div class="text-[12px] uppercase tracking-[.15em] font-black text-orange-400">Dữ liệu để cải tiến · không phải để tăng hồ sơ</div></div>
-    <div class="dash p-6 md:p-8 reveal">
-      <div class="flex items-center justify-between mb-6"><div><div class="text-xs uppercase tracking-[.16em] font-bold text-orange-400">Bảng theo dõi minh họa</div><h3 class="font-bold text-xl mt-2">Tổng quan chất lượng triển khai</h3></div><div class="w-3 h-3 bg-green-400 rounded-full shadow-[0_0_0_7px_rgba(74,222,128,.09)]"></div></div>
-      <div class="dash-row"><div><div class="text-sm font-semibold">Tiến độ chương trình</div><div class="bar mt-3"><span style="width:92%"></span></div></div><div class="text-orange-300 font-black">92%</div></div>
-      <div class="dash-row"><div><div class="text-sm font-semibold">Người dạy đạt chuẩn triển khai</div><div class="bar mt-3"><span style="width:86%"></span></div></div><div class="text-orange-300 font-black">86%</div></div>
-      <div class="dash-row"><div><div class="text-sm font-semibold">Lớp cần hỗ trợ chuyên môn</div><div class="text-xs text-slate-500 mt-2">Tín hiệu ưu tiên để mentoring</div></div><div class="text-white font-black">07</div></div>
-      <div class="dash-row"><div><div class="text-sm font-semibold">Điểm cần kiểm tra chất lượng sâu</div><div class="text-xs text-slate-500 mt-2">Phát hiện sớm trước khi thành vấn đề hệ thống</div></div><div class="text-white font-black">02</div></div>
-      <p class="text-[11px] text-slate-500 mt-5">Dữ liệu trên là mô phỏng giao diện quản trị, không phải số liệu báo cáo thực tế.</p>
+  <div class="wrap grid lg:grid-cols-[.86fr_1.14fr] gap-12 items-center">
+    <div class="reveal"><div class="section-head"><div class="kicker">03 · Quản trị chất lượng</div><h2 class="title text-white">KHÔNG CẦN THÊM<br><span class="gradient-text">MỘT BẢNG SỐ LIỆU</span></h2><p class="text-[17px] leading-8 text-slate-300">Điều hữu ích hơn là biết lớp nào đang đi đúng tiến độ, giáo viên nào cần hỗ trợ, nội dung nào trẻ gặp khó và điểm nào trong quá trình triển khai cần điều chỉnh</p></div><div class="text-[11px] uppercase tracking-[.15em] font-bold text-orange-400">Dữ liệu để cải tiến · không phải để tăng hồ sơ</div></div>
+    <div class="dash p-6 md:p-7 reveal">
+      <div class="flex items-center justify-between mb-5"><div><div class="text-[10px] uppercase tracking-[.16em] font-bold text-orange-400">Bảng theo dõi minh họa</div><h3 class="font-semibold text-lg mt-2">Tổng quan chất lượng triển khai</h3></div><div class="w-3 h-3 bg-green-400 rounded-full"></div></div>
+      <div class="dash-row"><div><div class="text-sm font-semibold">Tiến độ chương trình</div><div class="bar mt-3"><span style="width:92%"></span></div></div><div class="text-orange-300 font-bold">92%</div></div>
+      <div class="dash-row"><div><div class="text-sm font-semibold">Người dạy đạt chuẩn triển khai</div><div class="bar mt-3"><span style="width:86%"></span></div></div><div class="text-orange-300 font-bold">86%</div></div>
+      <div class="dash-row"><div><div class="text-sm font-semibold">Lớp cần hỗ trợ chuyên môn</div><div class="text-xs text-slate-500 mt-2">Tín hiệu ưu tiên để mentoring</div></div><div class="text-white font-bold">07</div></div>
+      <div class="dash-row"><div><div class="text-sm font-semibold">Điểm cần kiểm tra chất lượng sâu</div><div class="text-xs text-slate-500 mt-2">Phát hiện sớm trước khi thành vấn đề hệ thống</div></div><div class="text-white font-bold">02</div></div>
+      <p class="text-[10px] text-slate-500 mt-4 mb-0">Dữ liệu trên là mô phỏng giao diện quản trị, không phải số liệu báo cáo thực tế</p>
     </div>
   </div>
 </section>
 
 <section id="hethong" class="section bg-white">
   <div class="wrap">
-    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-14 items-start">
-      <div class="reveal lg:sticky lg:top-28"><div class="kicker mb-4">04 · Hệ thống phía sau chương trình</div><h2 class="title text-slate-950 mb-6">Cái “thông minh” không nằm ở robot. <span class="gradient-text">Nó nằm ở cách hệ thống nối các điểm với nhau.</span></h2><p class="subtitle">Từ một ca học, thông tin được ghi nhận, tổng hợp và chuyển thành hỗ trợ cho giáo viên, nhà trường và quá trình cải tiến chương trình.</p></div>
-      <div class="grid gap-4 reveal">
-        <div class="tech-card p-6 flex gap-5"><span class="badge live shrink-0 h-fit">Đang vận hành</span><div><h3 class="font-bold text-xl mb-2">Báo cáo ca học & tổng hợp triển khai</h3><p class="text-sm leading-6 text-slate-600">Ghi nhận nội dung đã dạy, tình trạng lớp, hình ảnh, sự cố và phản hồi từ hiện trường.</p></div></div>
-        <div class="tech-card p-6 flex gap-5"><span class="badge live shrink-0 h-fit">Đang vận hành</span><div><h3 class="font-bold text-xl mb-2">School Portal & lịch sử tháng</h3><p class="text-sm leading-6 text-slate-600">Mỗi trường có không gian theo dõi tháng hiện tại và lịch sử triển khai theo thời gian.</p></div></div>
-        <div class="tech-card p-6 flex gap-5"><span class="badge pilot shrink-0 h-fit">Thử nghiệm</span><div><h3 class="font-bold text-xl mb-2">Quan sát chất lượng người dạy</h3><p class="text-sm leading-6 text-slate-600">Chuẩn hóa các điểm quan sát để xác định nhu cầu mentoring và cải tiến năng lực triển khai.</p></div></div>
-        <div class="tech-card p-6 flex gap-5"><span class="badge road shrink-0 h-fit">Đang phát triển</span><div><h3 class="font-bold text-xl mb-2">Ánh xạ xu hướng phát triển của trẻ</h3><p class="text-sm leading-6 text-slate-600">Kết nối minh chứng quan sát qua nhiều hoạt động để nhìn thấy xu hướng, không xếp hạng trẻ.</p></div></div>
-        <div class="tech-card p-6 flex gap-5"><span class="badge road shrink-0 h-fit">Đang phát triển</span><div><h3 class="font-bold text-xl mb-2">Bảng theo dõi đa trường</h3><p class="text-sm leading-6 text-slate-600">Cho phép nhìn chất lượng theo cụm trường, nhận diện điểm rủi ro và phân bổ nguồn lực hỗ trợ.</p></div></div>
+    <div class="grid lg:grid-cols-[.78fr_1.22fr] gap-12 items-start">
+      <div class="reveal lg:sticky lg:top-24"><div class="section-head"><div class="kicker">04 · Hệ thống phía sau chương trình</div><h2 class="title text-slate-950">SỰ THÔNG MINH<br><span class="gradient-text">KHÔNG NẰM Ở ROBOT</span></h2><p class="subtitle">Nó nằm ở cách chương trình, người dạy, lớp học, dữ liệu và bảo đảm chất lượng được nối với nhau</p></div></div>
+      <div class="grid gap-3 reveal">
+        <div class="tech-card p-5 flex gap-5"><span class="badge live shrink-0 h-fit">Đang vận hành</span><div><h3 class="font-semibold text-lg mb-1">Báo cáo ca học & tổng hợp triển khai</h3><p class="text-sm leading-6 text-slate-600 mb-0">Ghi nhận nội dung đã dạy, tình trạng lớp, hình ảnh, sự cố và phản hồi từ hiện trường</p></div></div>
+        <div class="tech-card p-5 flex gap-5"><span class="badge live shrink-0 h-fit">Đang vận hành</span><div><h3 class="font-semibold text-lg mb-1">School Portal & lịch sử tháng</h3><p class="text-sm leading-6 text-slate-600 mb-0">Mỗi trường có không gian theo dõi tháng hiện tại và lịch sử triển khai theo thời gian</p></div></div>
+        <div class="tech-card p-5 flex gap-5"><span class="badge pilot shrink-0 h-fit">Thử nghiệm</span><div><h3 class="font-semibold text-lg mb-1">Quan sát chất lượng người dạy</h3><p class="text-sm leading-6 text-slate-600 mb-0">Chuẩn hóa các điểm quan sát để xác định nhu cầu mentoring và cải tiến năng lực triển khai</p></div></div>
+        <div class="tech-card p-5 flex gap-5"><span class="badge road shrink-0 h-fit">Đang phát triển</span><div><h3 class="font-semibold text-lg mb-1">Ánh xạ xu hướng phát triển của trẻ</h3><p class="text-sm leading-6 text-slate-600 mb-0">Kết nối minh chứng quan sát qua nhiều hoạt động để nhìn thấy xu hướng, không xếp hạng trẻ</p></div></div>
+        <div class="tech-card p-5 flex gap-5"><span class="badge road shrink-0 h-fit">Đang phát triển</span><div><h3 class="font-semibold text-lg mb-1">Bảng theo dõi đa trường</h3><p class="text-sm leading-6 text-slate-600 mb-0">Cho phép nhìn chất lượng theo cụm trường, nhận diện điểm rủi ro và phân bổ nguồn lực hỗ trợ</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-[#f5f7fa]">
-  <div class="wrap"><div class="max-w-3xl reveal mb-11"><div class="kicker mb-4">05 · Chu trình bảo đảm chất lượng</div><h2 class="title text-slate-950 mb-6">Chất lượng không được kiểm tra ở cuối. <span class="gradient-text">Nó được tạo ra trong suốt quá trình.</span></h2></div>
+<section class="section-tight bg-[#f5f7fa]">
+  <div class="wrap"><div class="max-w-3xl reveal section-head"><div class="kicker">05 · Chu trình bảo đảm chất lượng</div><h2 class="title text-slate-950">CHẤT LƯỢNG ĐƯỢC TẠO RA<br><span class="gradient-text">TRONG SUỐT QUÁ TRÌNH</span></h2></div>
     <div class="flow reveal">
-      <div><div class="flow-box"><div class="kicker mb-3">01</div><h3 class="font-bold">Chuẩn chương trình</h3></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">02</div><h3 class="font-bold">Chuẩn người dạy</h3></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">03</div><h3 class="font-bold">Lớp học thật</h3></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">04</div><h3 class="font-bold">Minh chứng</h3></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">05</div><h3 class="font-bold">Phản hồi</h3></div></div>
-      <div><div class="flow-box"><div class="kicker mb-3">06</div><h3 class="font-bold">Cải tiến</h3></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">01</div><h3 class="font-semibold">Chuẩn chương trình</h3></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">02</div><h3 class="font-semibold">Chuẩn người dạy</h3></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">03</div><h3 class="font-semibold">Lớp học thật</h3></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">04</div><h3 class="font-semibold">Minh chứng</h3></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">05</div><h3 class="font-semibold">Phản hồi</h3></div></div>
+      <div><div class="flow-box"><div class="kicker mb-3">06</div><h3 class="font-semibold">Cải tiến</h3></div></div>
     </div>
   </div>
 </section>
 
 <section id="minhchung" class="section dark-panel">
   <div class="wrap">
-    <div class="max-w-3xl reveal mb-12"><div class="kicker mb-4">06 · Minh chứng thực tế</div><h2 class="title text-white mb-6">Công nghệ chỉ có ý nghĩa khi nó <span class="gradient-text">hoạt động được trong một lớp học thật.</span></h2><p class="text-lg leading-8 text-slate-300">Có những điều nhìn qua video sẽ rõ hơn bất kỳ lời giới thiệu nào.</p></div>
-    <div class="grid lg:grid-cols-[1.35fr_.65fr] gap-6 items-stretch reveal">
-      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/40uRs7Qepkc?rel=0" title="Sunbot - video mới nhất 09/2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div><div class="mt-5"><div class="kicker">Ghi nhận mới nhất · 09.2026</div><h3 class="font-bold text-2xl text-white mt-2">Sunbot trong môi trường giáo dục thực tế</h3><p class="text-sm text-slate-400 mt-2">Công nghệ là học cụ; trọng tâm vẫn là trẻ, người dạy và chất lượng trải nghiệm.</p></div></div>
-      <div class="grid gap-4">
-        <div class="mini-stat p-5"><div class="kicker mb-3">Trẻ</div><p class="text-sm leading-6 text-slate-300">Học qua thao tác, thử nghiệm, hợp tác và giải quyết vấn đề.</p></div>
-        <div class="mini-stat p-5"><div class="kicker mb-3">Người dạy</div><p class="text-sm leading-6 text-slate-300">Có chương trình, học cụ và cơ chế hỗ trợ chuyên môn.</p></div>
-        <div class="mini-stat p-5"><div class="kicker mb-3">Nhà trường</div><p class="text-sm leading-6 text-slate-300">Có thể theo dõi việc triển khai và nhìn thấy các điểm cần cải tiến.</p></div>
+    <div class="max-w-3xl reveal section-head"><div class="kicker">06 · Minh chứng thực tế</div><h2 class="title text-white">CÔNG NGHỆ CHỈ CÓ Ý NGHĨA<br><span class="gradient-text">KHI HOẠT ĐỘNG TRONG LỚP HỌC THẬT</span></h2><p class="text-[17px] leading-8 text-slate-300">Có những điều nhìn qua video sẽ rõ hơn bất kỳ lời giới thiệu nào</p></div>
+    <div class="grid lg:grid-cols-[1.35fr_.65fr] gap-5 items-stretch reveal">
+      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/40uRs7Qepkc?rel=0" title="Sunbot - video mới nhất 09/2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div><div class="mt-4"><div class="kicker">Ghi nhận mới nhất · 09/2026</div><h3 class="font-semibold text-xl text-white mt-2">Sunbot trong môi trường giáo dục thực tế</h3><p class="text-sm text-slate-400 mt-2 mb-0">Công nghệ là học cụ; trọng tâm vẫn là trẻ, người dạy và chất lượng trải nghiệm</p></div></div>
+      <div class="grid gap-3">
+        <div class="mini-stat p-5"><div class="kicker mb-3">Trẻ</div><p class="text-sm leading-6 text-slate-300 mb-0">Học qua thao tác, thử nghiệm, hợp tác và giải quyết vấn đề</p></div>
+        <div class="mini-stat p-5"><div class="kicker mb-3">Người dạy</div><p class="text-sm leading-6 text-slate-300 mb-0">Có chương trình, học cụ và cơ chế hỗ trợ chuyên môn</p></div>
+        <div class="mini-stat p-5"><div class="kicker mb-3">Nhà trường</div><p class="text-sm leading-6 text-slate-300 mb-0">Có thể theo dõi việc triển khai và nhìn thấy các điểm cần cải tiến</p></div>
       </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-5 mt-12 reveal">
-      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/FNnTcqDDbp8?rel=0" title="Tổng quan chương trình Sunbot" allowfullscreen></iframe></div></div><h3 class="font-bold text-white mt-4">Tổng quan chương trình</h3></div>
-      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/Cy05o_qWHEQ?rel=0" title="Giờ học thực tế Sunbot" allowfullscreen></iframe></div></div><h3 class="font-bold text-white mt-4">Giờ học thực tế</h3></div>
-      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/HkXl-Svun4g?rel=0" title="Phòng STEAM Lab thực tế" allowfullscreen></iframe></div></div><h3 class="font-bold text-white mt-4">Phòng STEAM Lab</h3></div>
+    <div class="grid md:grid-cols-3 gap-4 mt-10 reveal">
+      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/FNnTcqDDbp8?rel=0" title="Tổng quan chương trình Sunbot" allowfullscreen></iframe></div></div><h3 class="font-semibold text-white mt-3">Tổng quan chương trình</h3></div>
+      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/Cy05o_qWHEQ?rel=0" title="Giờ học thực tế Sunbot" allowfullscreen></iframe></div></div><h3 class="font-semibold text-white mt-3">Giờ học thực tế</h3></div>
+      <div class="video-card"><div class="media-frame bg-[#111827] border-slate-700"><div class="media"><iframe src="https://www.youtube.com/embed/HkXl-Svun4g?rel=0" title="Phòng STEAM Lab thực tế" allowfullscreen></iframe></div></div><h3 class="font-semibold text-white mt-3">Phòng STEAM Lab</h3></div>
     </div>
-    <div class="mt-10 reveal"><a class="btn btn-dark" target="_blank" rel="noopener" href="https://youtube.com/playlist?list=PLUHU4_j4rB_3q_F6Ma3AKzW0S9oWEs_HA">Xem toàn bộ playlist truyền thông →</a></div>
+    <div class="mt-8 reveal"><a class="btn btn-dark" target="_blank" rel="noopener" href="https://youtube.com/playlist?list=PLUHU4_j4rB_3q_F6Ma3AKzW0S9oWEs_HA">Xem toàn bộ playlist truyền thông →</a></div>
   </div>
 </section>
 
 <section id="quocte" class="section bg-white">
-  <div class="wrap grid lg:grid-cols-[.85fr_1.15fr] gap-14 items-center">
-    <div class="reveal"><div class="kicker mb-4">07 · Ghi nhận độc lập từ bên ngoài</div><h2 class="title text-slate-950 mb-6">Hai năm liên tiếp được HolonIQ lựa chọn vào <span class="gradient-text">Southeast Asia EdTech 50.</span></h2><p class="subtitle mb-6">Sunbot xuất hiện trong cohort 2025 và 2026. Đây không phải là cách nói “50 công ty lớn nhất”, mà là sự ghi nhận từ một hệ thống market intelligence quốc tế đối với những EdTech đáng chú ý trong khu vực.</p><p class="text-sm leading-7 text-slate-600">Giá trị của việc xuất hiện liên tiếp không nằm ở một chiếc cúp, mà ở việc Sunbot được nhận diện ở hai thời điểm độc lập bởi một hệ thống quan sát thị trường bên ngoài.</p></div>
-    <div class="dark-panel rounded-[32px] p-7 md:p-9 reveal overflow-hidden relative"><div class="absolute inset-0 mesh opacity-40"></div><div class="relative z-10"><div class="flex items-center gap-5 mb-8"><div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center font-black text-2xl">2×</div><div><div class="text-xs uppercase tracking-[.15em] text-orange-300 font-black">2025 · 2026</div><h3 class="font-bold text-2xl mt-1">Southeast Asia EdTech 50</h3></div></div><div class="grid sm:grid-cols-2 gap-4"><div class="mini-stat p-5"><div class="text-[10px] uppercase tracking-[.14em] text-slate-500 font-black mb-2">Không phải</div><p class="font-semibold">Giải thưởng mua bằng phí tham dự.</p></div><div class="mini-stat p-5"><div class="text-[10px] uppercase tracking-[.14em] text-slate-500 font-black mb-2">Ý nghĩa hơn</div><p class="font-semibold">Một chỉ dấu thị trường độc lập về sản phẩm và đà phát triển.</p></div></div></div></div>
+  <div class="wrap grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-center">
+    <div class="reveal"><div class="section-head"><div class="kicker">07 · Ghi nhận độc lập từ bên ngoài</div><h2 class="title text-slate-950">HAI NĂM LIÊN TIẾP<br><span class="gradient-text">SOUTHEAST ASIA EDTECH 50</span></h2><p class="subtitle">Sunbot xuất hiện trong cohort 2025 và 2026. Đây không phải cách nói “50 công ty lớn nhất”, mà là sự ghi nhận từ một hệ thống market intelligence quốc tế đối với những EdTech đáng chú ý trong khu vực</p></div><p class="bodycopy">Giá trị của việc xuất hiện liên tiếp không nằm ở một chiếc cúp, mà ở việc Sunbot được nhận diện ở hai thời điểm độc lập bởi một hệ thống quan sát thị trường bên ngoài</p></div>
+    <div class="dark-panel rounded-[28px] p-7 md:p-8 reveal overflow-hidden relative"><div class="absolute inset-0 mesh opacity-35"></div><div class="relative z-10"><div class="flex items-center gap-5 mb-7"><div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center font-black text-xl">2×</div><div><div class="text-[10px] uppercase tracking-[.15em] text-orange-300 font-bold">2025 · 2026</div><h3 class="font-semibold text-xl mt-1">Southeast Asia EdTech 50</h3></div></div><div class="grid sm:grid-cols-2 gap-3"><div class="mini-stat p-5"><div class="text-[9px] uppercase tracking-[.14em] text-slate-500 font-bold mb-2">Không phải</div><p class="font-semibold mb-0">Giải thưởng mua bằng phí tham dự</p></div><div class="mini-stat p-5"><div class="text-[9px] uppercase tracking-[.14em] text-slate-500 font-bold mb-2">Ý nghĩa hơn</div><p class="font-semibold mb-0">Một chỉ dấu thị trường độc lập về sản phẩm và đà phát triển</p></div></div></div></div>
   </div>
 </section>
 
 <section class="section bg-[#f5f7fa]">
   <div class="wrap grid lg:grid-cols-2 gap-12 items-center">
-    <div class="reveal"><div class="kicker mb-4">08 · Mô hình có thể chuyển giao</div><h2 class="title text-slate-950 mb-6">Nhà trường là chủ thể tổ chức. <span class="gradient-text">Sunbot tập trung vào năng lực hệ thống.</span></h2><p class="subtitle">Chương trình, học cụ, công nghệ, đào tạo, đồng hành chuyên môn và bảo đảm chất lượng được thiết kế để nhà trường có thể chủ động tổ chức nguồn lực tại địa phương.</p></div>
-    <div class="grid sm:grid-cols-2 gap-4 reveal"><div class="tech-card p-7"><div class="kicker mb-4">Nhà trường</div><h3 class="font-bold text-xl mb-4">Giữ vai trò chủ thể</h3><p class="text-sm leading-6 text-slate-600">Tổ chức hoạt động, bố trí nguồn nhân lực, phối hợp phụ huynh và quản lý việc triển khai.</p></div><div class="tech-card p-7"><div class="kicker mb-4">Sunbot</div><h3 class="font-bold text-xl mb-4">Chuyển giao & bảo đảm chất lượng</h3><p class="text-sm leading-6 text-slate-600">Chương trình, robot/học cụ, nền tảng số, đào tạo, sát hạch, mentoring và QA định kỳ.</p></div></div>
+    <div class="reveal"><div class="section-head"><div class="kicker">08 · Mô hình có thể chuyển giao</div><h2 class="title text-slate-950">NHÀ TRƯỜNG LÀ CHỦ THỂ<br><span class="gradient-text">SUNBOT LÀ NĂNG LỰC HỆ THỐNG</span></h2><p class="subtitle">Chương trình, học cụ, công nghệ, đào tạo, đồng hành chuyên môn và bảo đảm chất lượng được thiết kế để nhà trường có thể chủ động tổ chức nguồn lực tại địa phương</p></div></div>
+    <div class="grid sm:grid-cols-2 gap-4 reveal"><div class="tech-card p-6"><div class="kicker mb-4">Nhà trường</div><h3 class="font-semibold text-lg mb-3">Giữ vai trò chủ thể</h3><p class="text-sm leading-6 text-slate-600 mb-0">Tổ chức hoạt động, bố trí nguồn nhân lực, phối hợp phụ huynh và quản lý việc triển khai</p></div><div class="tech-card p-6"><div class="kicker mb-4">Sunbot</div><h3 class="font-semibold text-lg mb-3">Chuyển giao & bảo đảm chất lượng</h3><p class="text-sm leading-6 text-slate-600 mb-0">Chương trình, robot/học cụ, nền tảng số, đào tạo, sát hạch, mentoring và QA định kỳ</p></div></div>
   </div>
 </section>
 
-<section class="py-20 bg-[#0b0f19] text-white">
-  <div class="wrap flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between"><div><div class="kicker mb-4">Sunbot · Kiro Việt Nam</div><h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Nhìn thấy sự học. Phát triển người dạy. Quản trị chất lượng.</h2><p class="text-slate-400 max-w-2xl">Một hệ thống giáo dục công nghệ được thiết kế để đi vào trường học thật và cải tiến được theo thời gian.</p></div><a href="mailto:sunbotvietnam@gmail.com" class="btn btn-primary shrink-0">Trao đổi về triển khai →</a></div>
+<section class="py-16 bg-[#0b0f19] text-white">
+  <div class="wrap flex flex-col lg:flex-row gap-7 items-start lg:items-center justify-between"><div><div class="kicker mb-3">Sunbot · Kiro Việt Nam</div><h2 class="text-[34px] md:text-[42px] leading-none">NHÌN THẤY SỰ HỌC<br>PHÁT TRIỂN NGƯỜI DẠY<br>QUẢN TRỊ CHẤT LƯỢNG</h2><p class="text-slate-400 max-w-2xl mt-4 mb-0 text-sm">Một hệ thống giáo dục công nghệ được thiết kế để đi vào trường học thật và cải tiến theo thời gian</p></div><a href="mailto:sunbotvietnam@gmail.com" class="btn btn-primary shrink-0">Trao đổi về triển khai →</a></div>
 </section>
 
-<footer class="bg-[#070a11] text-slate-500 py-10 border-t border-slate-900"><div class="wrap flex flex-col md:flex-row gap-6 items-center justify-between"><div class="flex items-center gap-4"><img src="./logo-sunbot.png" alt="Sunbot" class="h-9 object-contain brightness-110"><span class="text-xs">© 2026 Kiro Vietnam Education Technology JSC.</span></div><div class="text-xs">sunbotvietnam@gmail.com · www.sunbot.vn</div></div></footer>
+<footer class="bg-[#070a11] text-slate-500 py-8 border-t border-slate-900"><div class="wrap flex flex-col md:flex-row gap-5 items-center justify-between"><div class="flex items-center gap-4"><img src="./logo-sunbot.png" alt="Sunbot" class="h-8 object-contain brightness-110"><span class="text-[11px]">© 2026 Kiro Vietnam Education Technology JSC.</span></div><div class="text-[11px]">sunbotvietnam@gmail.com · www.sunbot.vn</div></div></footer>
 
 <script>
   const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.12});
